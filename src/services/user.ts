@@ -23,3 +23,13 @@ export const createUsers = async (users: Prisma.UserCreateInput[]) => {
     return false;
   }
 };
+
+export const updateUser = async () => {
+  const updateUser = await prisma.user.update({
+    where: {
+      email: "",
+    },
+    data: {},
+  });
+  return updateUser;
+};
