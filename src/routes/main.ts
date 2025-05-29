@@ -3,6 +3,7 @@ import {
   createUser,
   createUsers,
   deleteUser,
+  getAllUsers,
   updateUser,
 } from "../services/user";
 
@@ -31,6 +32,11 @@ mainRouter.post("/users", async (req, res) => {
     { name: "Charlie", email: "charlie987@gmail.com" },
     { name: "David", email: "david890@hotmail.com" },
   ]);
+  res.json({ result });
+});
+
+mainRouter.get("/users", async (req, res) => {
+  const result = await getAllUsers();
   res.json({ result });
 });
 
